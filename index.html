@@ -24,7 +24,7 @@
 
     .hero {
       text-align: center;
-      padding: 80px 20px 40px;
+      padding: 80px 20px 24px;
       background: linear-gradient(180deg, #0f172a 0%, var(--bg) 100%);
       position: relative;
       overflow: hidden;
@@ -52,15 +52,11 @@
       margin-top: 10px;
       position: relative;
     }
-    .hero .badge {
-      display: inline-block;
-      padding: 6px 16px;
-      background: rgba(96,165,250,0.1);
-      border: 1px solid rgba(96,165,250,0.3);
-      border-radius: 20px;
-      font-size: 0.85rem;
-      color: var(--accent);
-      margin-top: 18px;
+    .hero .desc {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 6px;
+      position: relative;
     }
 
     .download-section {
@@ -70,7 +66,7 @@
     .btn-download {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       padding: 16px 40px;
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       color: #fff;
@@ -87,11 +83,6 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 30px rgba(96,165,250,0.4);
     }
-    .btn-download small {
-      font-size: 0.8rem;
-      font-weight: 400;
-      opacity: 0.8;
-    }
     .download-info {
       margin-top: 10px;
       font-size: 0.85rem;
@@ -103,37 +94,70 @@
       margin: 0 auto;
       padding: 10px 20px 60px;
     }
+
     .feature-card {
       background: var(--card);
       border: 1px solid #1e293b;
       border-radius: 14px;
-      padding: 32px;
+      padding: 40px 32px;
       transition: border-color 0.2s;
     }
     .feature-card:hover { border-color: var(--accent); }
-    .feature-card .icon { text-align: center; font-size: 2.2rem; margin-bottom: 16px; }
-    .feature-card h3 { text-align: center; font-size: 1.15rem; margin-bottom: 4px; }
-    .feature-card p { color: var(--muted); font-size: 0.9rem; margin-left: 10px; }
-    .feature-item { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; border-bottom: 1px solid #1e293b; }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid #1e293b;
+    }
     .feature-item:last-child { border-bottom: none; }
-    .feature-item .fi-icon { font-size: 1.3rem; flex-shrink: 0; width: 28px; text-align: center; }
-    .feature-item .fi-text h4 { font-size: 0.95rem; font-weight: 600; }
-    .feature-item .fi-text p { color: var(--muted); font-size: 0.85rem; margin: 0; }
+
+    .feature-item .fi-icon {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .feature-item .fi-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--accent);
+      stroke-width: 1.5;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .feature-item .fi-text { flex: 1; }
+    .feature-item .fi-text h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .feature-item .fi-text p {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
 
     .req-tags {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 8px;
       flex-wrap: wrap;
-      margin-top: 16px;
+      margin-top: 10px;
       padding: 10px 20px 50px;
     }
     .req-tag {
-      padding: 8px 20px;
-      background: var(--card);
-      border: 1px solid #1e293b;
-      border-radius: 10px;
-      font-size: 0.9rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .req-tag + .req-tag::before {
+      content: "·";
+      margin-right: 8px;
+      color: #475569;
     }
 
     footer {
@@ -142,12 +166,14 @@
       color: var(--muted);
       font-size: 0.85rem;
       border-top: 1px solid #1e293b;
+      line-height: 1.8;
     }
     footer a { color: var(--accent); text-decoration: none; }
+    footer .email { color: #64748b; }
 
     @media (max-width: 640px) {
       .hero h1 { font-size: 2.2rem; }
-      .hero { padding: 50px 16px 30px; }
+      .hero { padding: 50px 16px 20px; }
     }
   </style>
 </head>
@@ -155,80 +181,73 @@
 
 <div class="hero">
   <h1><span>PulsarPeek</span> 🌀</h1>
-  <p class="subtitle">Pulsar Catalog Browser for macOS</p>
-  <div class="badge">⚡ Browse · Search · Visualize</div>
+  <p class="subtitle">Native psrcat Visualizer for macOS</p>
+  <p class="desc">Browse, filter, and visualize ATNF pulsar-catalog data locally.</p>
 </div>
 
 <div class="download-section">
   <a href="PulsarPeek_v1.dmg" class="btn-download">
-    ⬇ Download PulsarPeek
-    <small>v1.0 · DMG</small>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download for macOS
   </a>
-  <p class="download-info">macOS 11.0+ · Apple Silicon & Intel</p>
+  <p class="download-info">v1.0 · DMG · macOS 11+ · Apple Silicon / Intel</p>
 </div>
 
 <div class="features">
   <div class="feature-card">
-    <div class="icon">📊</div>
-    <h3>Features</h3>
-    <div style="margin-top: 16px;">
-      <div class="feature-item">
-        <div class="fi-icon">📋</div>
-        <div class="fi-text">
-          <h4>Catalog Browser</h4>
-          <p>Fast loading and navigation of pulsar catalog data</p>
-        </div>
+    <div class="feature-item">
+      <div class="fi-icon">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="9"/><line x1="15" y1="3" x2="15" y2="9"/></svg>
       </div>
-      <div class="feature-item">
-        <div class="fi-icon">🔍</div>
-        <div class="fi-text">
-          <h4>Multi-dimensional Search</h4>
-          <p>Filter by name, period, DM, and more</p>
-        </div>
+      <div class="fi-text">
+        <h4>psrcat Catalog Viewer</h4>
+        <p>Browse and inspect ATNF pulsar catalog entries in a clean native macOS interface.</p>
       </div>
-      <div class="feature-item">
-        <div class="fi-icon">📊</div>
-        <div class="fi-text">
-          <h4>Data Visualization</h4>
-          <p>Key parameter distribution charts at a glance</p>
-        </div>
+    </div>
+
+    <div class="feature-item">
+      <div class="fi-icon">
+        <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7.5"/><line x1="16" y1="16" x2="21" y2="21"/></svg>
       </div>
-      <div class="feature-item">
-        <div class="fi-icon">💾</div>
-        <div class="fi-text">
-          <h4>Local Caching</h4>
-          <p>Offline-ready, no repeated loading</p>
-        </div>
+      <div class="fi-text">
+        <h4>Parameter Search</h4>
+        <p>Filter pulsars by name, period, DM, sky position, binary parameters, and more.</p>
       </div>
-      <div class="feature-item">
-        <div class="fi-icon">⚡</div>
-        <div class="fi-text">
-          <h4>Performance Optimized</h4>
-          <p>Handles large datasets with ease</p>
-        </div>
+    </div>
+
+    <div class="feature-item">
+      <div class="fi-icon">
+        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       </div>
-      <div class="feature-item">
-        <div class="fi-icon">🖥️</div>
-        <div class="fi-text">
-          <h4>Native macOS App</h4>
-          <p>Apple Silicon & Intel supported</p>
-        </div>
+      <div class="fi-text">
+        <h4>Interactive Visualization</h4>
+        <p>Generate quick distribution and correlation plots for key pulsar parameters.</p>
+      </div>
+    </div>
+
+    <div class="feature-item">
+      <div class="fi-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      </div>
+      <div class="fi-text">
+        <h4>Local Cache</h4>
+        <p>Parsed catalog data are stored locally for faster repeated access.</p>
       </div>
     </div>
   </div>
 </div>
 
 <div class="req-tags">
-  <span class="req-tag">macOS 11.0+</span>
-  <span class="req-tag">Apple Silicon</span>
-  <span class="req-tag">Intel</span>
+  <span class="req-tag">ATNF psrcat</span>
+  <span class="req-tag">Native macOS</span>
+  <span class="req-tag">Offline Ready</span>
   <span class="req-tag">Open Source</span>
 </div>
 
 <footer>
-  <a href="https://github.com/seathunder421/PulsarPeek">GitHub</a> ·
-  MIT License ·
-  Built with 🌀 for pulsar astronomers
+  <div>Data source: <a href="https://www.atnf.csiro.au/research/pulsar/psrcat/">ATNF Pulsar Catalogue</a> / psrcat</div>
+  <div style="margin-top: 4px;"><a href="https://github.com/seathunder421/PulsarPeek">Open source on GitHub</a></div>
+  <div class="email" style="margin-top: 4px;"><a href="mailto:seathunderai@gmail.com">seathunderai@gmail.com</a></div>
 </footer>
 
 </body>
