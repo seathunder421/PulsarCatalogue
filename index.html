@@ -108,13 +108,17 @@
       border: 1px solid #1e293b;
       border-radius: 14px;
       padding: 32px;
-      text-align: center;
       transition: border-color 0.2s;
     }
     .feature-card:hover { border-color: var(--accent); }
-    .feature-card .icon { font-size: 2.5rem; margin-bottom: 14px; }
-    .feature-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-    .feature-card p { color: var(--muted); font-size: 0.95rem; max-width: 480px; margin: 0 auto; }
+    .feature-card .icon { text-align: center; font-size: 2.2rem; margin-bottom: 16px; }
+    .feature-card h3 { text-align: center; font-size: 1.15rem; margin-bottom: 4px; }
+    .feature-card p { color: var(--muted); font-size: 0.9rem; margin-left: 10px; }
+    .feature-item { display: flex; align-items: flex-start; gap: 12px; padding: 8px 0; border-bottom: 1px solid #1e293b; }
+    .feature-item:last-child { border-bottom: none; }
+    .feature-item .fi-icon { font-size: 1.3rem; flex-shrink: 0; width: 28px; text-align: center; }
+    .feature-item .fi-text h4 { font-size: 0.95rem; font-weight: 600; }
+    .feature-item .fi-text p { color: var(--muted); font-size: 0.85rem; margin: 0; }
 
     .req-tags {
       display: flex;
@@ -166,8 +170,51 @@
 <div class="features">
   <div class="feature-card">
     <div class="icon">📊</div>
-    <h3>Data Visualization Made Simple</h3>
-    <p>Explore pulsar catalogs through interactive visualizations — parameter distributions, correlations, and multi-dimensional filtering at your fingertips.</p>
+    <h3>Features</h3>
+    <div style="margin-top: 16px;">
+      <div class="feature-item">
+        <div class="fi-icon">📋</div>
+        <div class="fi-text">
+          <h4>Catalog Browser</h4>
+          <p>Fast loading and navigation of pulsar catalog data</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="fi-icon">🔍</div>
+        <div class="fi-text">
+          <h4>Multi-dimensional Search</h4>
+          <p>Filter by name, period, DM, and more</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="fi-icon">📊</div>
+        <div class="fi-text">
+          <h4>Data Visualization</h4>
+          <p>Key parameter distribution charts at a glance</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="fi-icon">💾</div>
+        <div class="fi-text">
+          <h4>Local Caching</h4>
+          <p>Offline-ready, no repeated loading</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="fi-icon">⚡</div>
+        <div class="fi-text">
+          <h4>Performance Optimized</h4>
+          <p>Handles large datasets with ease</p>
+        </div>
+      </div>
+      <div class="feature-item">
+        <div class="fi-icon">🖥️</div>
+        <div class="fi-text">
+          <h4>Native macOS App</h4>
+          <p>Apple Silicon & Intel supported</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
