@@ -28,7 +28,7 @@ Runs as a native macOS desktop application — no browser needed, data cached lo
 
 ## ⬇️ Download
 
-[**Download PulsarPeek_v2.dmg**](PulsarPeek_v2.dmg) — ~16 MB
+[**Download PulsarPeek_v2.dmg**](https://github.com/seathunder421/PulsarPeek/raw/main/PulsarPeek_v2.dmg) — ~16 MB
 
 ### 📦 Install
 
